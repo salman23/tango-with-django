@@ -1,0 +1,6 @@
+Bing Search API
+https://api.datamarket.azure.com/Bing/Search/v1/Composite?Query=%27rango%27
+API key: Qly0QWrnLWoccC+rpMxb/YLFPNf43h1wfUctqDOgdJc
+
+from requests.auth import HTTPBasicAuth
+r = requests.get(search_url, auth=HTTPBasicAuth('', 'Qly0QWrnLWoccC+rpMxb/YLFPNf43h1wfUctqDOgdJc'))

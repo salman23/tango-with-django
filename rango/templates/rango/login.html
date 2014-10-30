@@ -1,0 +1,29 @@
+{% extends 'rango/base.html' %}
+
+{% block title %}login{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+<div class="container">
+    <h1>Login to rango</h1>
+    {% if invalid %}
+    <p>Invalid username/password. Please try again.</p>
+    {% endif %}
+    <form class="form-signin span4" name="loginform" id="login_form" method="POST" action="/rango/login/">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        {% csrf_token %}
+
+        {% if bad_details %}
+        <p><strong>Your username and/or password were incorrect!</strong></p>
+        {% elif disabled_account %}
+        <p><strong>Your Rango account is currently disabled; we can't log you in!</strong></p>
+        {% endif %}
+        Username: <input class="input-block-level" placeholder="Username" name="username" type="text" value="" size="50" />
+        <br/>
+        Password: <input class="input-block-level" placeholder="Password" name="password" type="password" value="" size="50" />
+        <br/>
+        <input class="btn btn-primary" type="submit" name="login" value="login">
+    </form>
+</div>
+</div>
+{% endblock %}

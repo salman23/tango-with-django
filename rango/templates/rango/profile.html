@@ -1,0 +1,46 @@
+{% extends 'rango/base.html' %}
+
+{% load static %}
+
+{% block title %}{{ user.username }}-profile{% endblock %}
+
+{% block body_block %}
+<div class="hero-unit">
+  <div class="row">
+    <div class="span3" >
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ user.username }}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+                <img class="img-responsive img-circle pull-right" src="{{ MEDIA_URL }}media1.png"> 
+            <div class="span3"> 
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td>Name:</td>
+                    <td>{{ user.first_name }}</td>
+                  </tr>
+                  <tr>
+                    <td>User Name:</td>
+                    <td>{{ user.username}}</td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td>{{ user.email }}</td>
+                  </tr>
+                <td>Phone Number</td>
+                <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                </td>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
